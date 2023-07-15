@@ -10,8 +10,9 @@
 ### productivity metrix/table (prod table) -- 01:05
 
 1. use `<span>` x 25  with grid layout to make a metrixe (and make them have ids
-2. or i can use ` <table>
+2. or i can use
+   ``` <table>
         <tbody id="table-body">
             <!-- Table rows and cells will be added here dynamically -->
         </tbody>
-    </table>`  and `<td></td>` to make the table 
+    </table>```  and `<td></td>` to make the table 
