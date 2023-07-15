@@ -9,4 +9,4 @@
 
 ### productivity metrix/table (prod table) -- 01:05
 
-1. use '<span>' x 25  with grid layout to make a metrixe (and make them have ids
+1. use `<span>` x 25  with grid layout to make a metrixe (and make them have ids
