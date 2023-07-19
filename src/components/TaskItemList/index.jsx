@@ -1,18 +1,38 @@
+import styled from 'styled-components'
+import Task from '../Task'
 
 
-function TaskList({ taskList }) {
+const TaskListContainer = styled.div`
+  background-color: red;
+  width: 300px;
+  max-width: 600px;
+`
+const TaskContent = styled.div`
+  background-color: blue;
+`
+
+function TaskList({ taskList, setTaskList }) {
+
   return (
-    <div>
+    <TaskListContainer>
       <h1>Tak list </h1>
-      <ul>
-        <li>aa</li>
-        <li>aa</li>
-        {taskList.map((task, id) => {
-          return <li key={`${task}-${id}`}>{task}</li>
-        })}
-        <li>aa</li>
-      </ul>
-    </div>
+      <TaskContent>
+        {taskList &&
+          taskList.map(({ id, task, statu }, index) => {
+            return (
+              <Task
+                key={id}
+                id={id}
+                task={task}
+                statu={statu}
+                taskList={taskList}
+                setTaskList={setTaskList}
+                index={index}
+              />
+            )
+          })}
+      </TaskContent>
+    </TaskListContainer>
   )
 }
 

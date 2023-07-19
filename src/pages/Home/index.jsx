@@ -13,24 +13,24 @@ const HomeWrapper = styled.div`
 `
 
 function Home() {
-  const [taskList, setTaskList] = useState([])
+  const [taskList, setTaskList] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks")
+    return savedTasks ? JSON.parse(savedTasks) : []
+  })
   const [inputVal, setInputVal] = useState("")
 
-  //   useEffect(() => {
-  //     const tasks = localStorage.getItem("tasks")
-  //       ? JSON.parse(localStorage.getItem("tasks"))
-  //       : []
-  //     setTaskList(tasks)
-  //   }, [])
+   
 
-  useEffect(() => {
-    console.log("hello")
-  }, [])
+    useEffect(() => {
+      console.log(taskList)
+      localStorage.setItem("tasks", JSON.stringify(taskList))
+
+    }, [taskList])
+
   
   return (
     <HomeWrapper>
       <h1>Home </h1>
-
       <ProdTable />
       <TaskPrompt
         taskList={taskList}
@@ -38,7 +38,7 @@ function Home() {
         inputVal={inputVal}
         setInputVal={setInputVal}
       />
-      <TaskList taskList={taskList} />
+      <TaskList taskList={taskList} setTaskList={setTaskList} />
     </HomeWrapper>
   )
 }
