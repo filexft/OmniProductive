@@ -11,8 +11,15 @@ const TaskContent = styled.div`
   background-color: blue;
 `
 
-function TaskList({ taskList, setTaskList }) {
-
+function TaskList({
+  taskList,
+  setTaskList,
+  inputVal,
+  setInputVal,
+  editing,
+  setEditing,
+  editingID,
+setEditingID}) {
   return (
     <TaskListContainer>
       <h1>Tak list </h1>
@@ -28,6 +35,12 @@ function TaskList({ taskList, setTaskList }) {
                 taskList={taskList}
                 setTaskList={setTaskList}
                 index={index}
+                inputVal={inputVal}
+                setInputVal={setInputVal}
+                editing={editing}
+                setEditing={setEditing}
+                setEditingID={setEditingID}
+                editingID={editingID}
               />
             )
           })}

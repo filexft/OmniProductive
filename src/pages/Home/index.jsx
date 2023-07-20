@@ -10,6 +10,7 @@ const HomeWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 50px;
 `
 
 function Home() {
@@ -18,7 +19,9 @@ function Home() {
     return savedTasks ? JSON.parse(savedTasks) : []
   })
   const [inputVal, setInputVal] = useState("")
+  const [editing, setEditing] = useState(false)
 
+  const [editingID, setEditingID] = useState()
    
 
     useEffect(() => {
@@ -37,8 +40,21 @@ function Home() {
         setTaskList={setTaskList}
         inputVal={inputVal}
         setInputVal={setInputVal}
+        editing={editing}
+        setEditing={setEditing}
+        setEditingID={setEditingID}
+        editingID={editingID}
       />
-      <TaskList taskList={taskList} setTaskList={setTaskList} />
+      <TaskList
+        taskList={taskList}
+        setTaskList={setTaskList}
+        inputVal={inputVal}
+        setInputVal={setInputVal}
+        editing={editing}
+        setEditing={setEditing}
+        setEditingID={setEditingID}
+        editingID={editingID}
+      />
     </HomeWrapper>
   )
 }

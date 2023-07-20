@@ -28,7 +28,10 @@ a{
 
   right: 100%;
 
-  background-color: black;
+  outline: none;
+
+  background-color:transparent;
+  border: none;
   display: flex;
 
 }
