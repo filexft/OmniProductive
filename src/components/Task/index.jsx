@@ -77,9 +77,9 @@ function Task({
   }
 
   const handleEdit = (e) => {
-    console.log(
-      e.target.parentElement.parentElement.parentElement.firstChild.lastChild,
-    )
+    // console.log(
+    //   e.target.parentElement.parentElement.parentElement.firstChild.lastChild,
+    // )
     // const textVal =
     //   e.target.parentElement.parentElement.parentElement.firstChild.lastChild
 
@@ -87,13 +87,11 @@ function Task({
 
     setInputVal(task)
     setEditing(true)
-    console.log(index)
     setEditingID(() => id)
   }
 
   const handleDelete = (e) => {
     const itemIndex = taskList.findIndex((item) => item.id === id)
-    console.log(itemIndex)
     let  newList
     if(itemIndex === 0) {
         newList = []
@@ -106,7 +104,7 @@ function Task({
   }
 
   const showMenu = (e) => {
-    console.log("clicked at", e.target.parentElement.parentElement.lastChild)
+    // console.log("clicked at", e.target.parentElement.parentElement.lastChild)
 
     const parentItem = e.target.parentElement.parentElement
     // parentItem.classList.add("show")

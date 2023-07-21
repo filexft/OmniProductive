@@ -19,6 +19,8 @@ function Home() {
     return savedTasks ? JSON.parse(savedTasks) : []
   })
   const [inputVal, setInputVal] = useState("")
+  const [inputID, setInputID] = useState()
+
   const [editing, setEditing] = useState(false)
 
   const [editingID, setEditingID] = useState()
@@ -27,14 +29,21 @@ function Home() {
     useEffect(() => {
       console.log(taskList)
       localStorage.setItem("tasks", JSON.stringify(taskList))
-
     }, [taskList])
 
   
   return (
     <HomeWrapper>
       <h1>Home </h1>
-      <ProdTable />
+      <ProdTable
+        inputID={inputID}
+        setInputID={setInputID}
+        taskList={taskList}
+        setTaskList={setTaskList}
+        editing={editing}
+        setEditing={setEditing}
+        setEditingID={setEditingID}
+      />
       <TaskPrompt
         taskList={taskList}
         setTaskList={setTaskList}
@@ -44,6 +53,8 @@ function Home() {
         setEditing={setEditing}
         setEditingID={setEditingID}
         editingID={editingID}
+        inputID={inputID}
+        setInputID={setInputID}
       />
       <TaskList
         taskList={taskList}

@@ -11,6 +11,8 @@ function TaskPrompt({
   setEditing,
   editingID,
   setEditingID,
+  inputID,
+  setInputID,
 }) {
   const handleForm = (e) => {
     e.preventDefault()
@@ -19,7 +21,7 @@ function TaskPrompt({
       if (editing) {
         const itemIndex = taskList.findIndex((item) => item.id === editingID)
 
-        const newVal = { ...taskList[itemIndex], task:  inputVal  }
+        const newVal = { ...taskList[itemIndex], task: inputVal }
 
         const oldVal = [...taskList]
 
@@ -27,31 +29,41 @@ function TaskPrompt({
 
         setTaskList(oldVal)
       } else {
+        console.log(inputID)
         setTaskList((prevTask) => [
           ...prevTask,
-          { id: new Date().getTime(), task: inputVal, statu: false },
+          { id: inputID, task: inputVal, statu: false },
         ])
       }
       setInputVal("")
+      setInputID(-1)
+      setEditing(false)
+      console.log(inputID, editing);
     }
   }
 
   return (
     <PromptWrapper>
-      <h1>to do prompt </h1>
-      <form onSubmit={handleForm}>
-        <input
-          id="input-bar"
-          type="text"
-          placeholder="task .."
-          value={inputVal}
-          onChange={(e) => setInputVal(e.target.value)}
-          onKeyUp={handleForm}
-        />
-        <button type="submit" onClick={handleForm}>
-          Add
-        </button>
-      </form>
+      {inputID >= 0 || editing ? (
+        <>
+          <h1>to do prompt </h1>
+          <form onSubmit={handleForm}>
+            <input
+              id="input-bar"
+              type="text"
+              placeholder="task .."
+              value={inputVal}
+              onChange={(e) => setInputVal(e.target.value)}
+              onKeyUp={handleForm}
+            />
+            <button type="submit" onClick={handleForm}>
+              Add
+            </button>
+          </form>
+        </>
+      ) : (
+        ""
+      )}
     </PromptWrapper>
   )
 }
