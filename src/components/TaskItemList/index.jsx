@@ -3,14 +3,18 @@ import Task from '../Task'
 
 
 const TaskListContainer = styled.div`
-  background-color: red;
-  width: 300px;
-  max-width: 600px;
+  width: 500px;
+  max-width: 90%;
+  padding: 10px 20px;
+
+  background-color: #acfadf;
+  border-radius : 5px
 `
 const TaskContent = styled.div`
-  background-color: blue;
 `
-
+const TaskTitle = styled.h1`
+  text-align: center;
+`
 function TaskList({
   taskList,
   setTaskList,
@@ -22,7 +26,7 @@ function TaskList({
 setEditingID}) {
   return (
     <TaskListContainer>
-      <h1>Tak list </h1>
+      <TaskTitle>Tak list </TaskTitle>
       <TaskContent>
         {taskList &&
           taskList.map(({ id, task, statu }, index) => {

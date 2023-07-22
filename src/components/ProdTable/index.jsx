@@ -1,5 +1,16 @@
 import styled from "styled-components"
 
+
+
+const ProdTableWrapper = styled.div`
+  margin: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  background-color: white;
+  padding : 10px;
+  
+`
+
 const GridTable = styled.div`
   position: relative;
 `
@@ -12,25 +23,37 @@ const GridTableCells = styled.div`
   width: 400px;
   max-width: 600px;
   text-align: center;
+  padding: 10px;
+  background: rgb(255, 0, 28);
+  background: linear-gradient(
+    132deg,
+    rgba(255, 0, 28, 1) 0%,
+    rgba(129, 207, 151, 1) 24%,
+    rgba(189, 219, 188, 1) 38%,
+    rgba(218, 182, 182, 1) 53%,
+    rgba(236, 234, 241, 1) 70%
+  );
+  background-position: top left;
 `
 
 const LeftSide = styled.h3`
   position: absolute;
   top: 30%;
-  left: -70px;
+  left: -60px;
   transform: rotateZ(-90deg);
 `
 const TopSide = styled.h3`
   position: absolute;
-  top: -50%;
-  left: 30%;
+  bottom: -35%;
+  left: 40%;
 `
 
 const Cell = styled.span`
-  background-color: aquamarine;
+  background-color: #fff;
   border-radius: 5px;
+  border : 1px solid #ccc;
   &:hover {
-    background-color: rgb(80, 180, 211);
+    background-color: #e8ffce;
   }
 `
 
@@ -64,7 +87,8 @@ function ProdTable({
   }
 
   return (
-    <div>
+    <ProdTableWrapper>
+      <h1>To Do APP</h1>
       <GridTable>
         <GridTableCells>
           {numArr.map((item, index) => {
@@ -75,10 +99,10 @@ function ProdTable({
             )
           })}
         </GridTableCells>
-        <LeftSide>Time</LeftSide>
-        <TopSide>Urgence</TopSide>
+        <LeftSide>Urgence</LeftSide>
+        <TopSide>Time</TopSide>
       </GridTable>
-    </div>
+    </ProdTableWrapper>
   )
 }
 

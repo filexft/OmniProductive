@@ -13,6 +13,10 @@ code {
 }
 
 a{
+  margin-top: ;
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,11 +30,16 @@ a{
   z-index: 9;
 
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   right: 100%;
+  text-align: center;
 
-  outline: none;
-
-  background-color:transparent;
+  background-color:rgb(165, 236, 230);
+  border-radius: 10px;
   border: none;
   display: flex;
 

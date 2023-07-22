@@ -3,6 +3,7 @@ import { styled } from "styled-components"
 import ProdTable from "../../components/ProdTable"
 import TaskPrompt from "../../components/TaskPrompt"
 import TaskList from "../../components/TaskItemList"
+import { GlobalStyle } from "../../utils/GlobalStyle"
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ function Home() {
   
   return (
     <HomeWrapper>
-      <h1>Home </h1>
+      <GlobalStyle />
       <ProdTable
         inputID={inputID}
         setInputID={setInputID}

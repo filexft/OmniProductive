@@ -4,14 +4,18 @@ import styled from "styled-components"
 const TaskWrapper = styled.div`
   display: flex;
 
-  background-color: yellow;
+  // background-color: #acfadf;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  border-bottom : 1px groove #ccc;
+  border-radius: 5px;
+  margin : 2px;
 `
 
 const TaskLabel = styled.label`
   display: flex;
+  width: 80%;
 `
 
 const TaskText = styled.p`
@@ -20,9 +24,15 @@ const TaskText = styled.p`
   background-color:transparent;
   border: none;
   line-height: 24px;
-  width: 80%;
   ${({ checked }) => checked && `text-decoration: line-through;`}}
 `
+
+const MenuButton = styled.span`
+  padding: 10px;
+  color: #060047;
+`
+
+
 
 const TaskActions = styled.div`
   position: relative;
@@ -85,26 +95,30 @@ function Task({
 
     setMenuMode(!menuMode)
 
-    setInputVal(task)
+    setInputVal(() => {
+      const item = taskList.filter((element) => element.id === id)
+      console.log(item, item[0].task)
+      return item[0].task
+    })
     setEditing(true)
     setEditingID(() => id)
   }
 
   const handleDelete = (e) => {
-    const itemIndex = taskList.findIndex((item) => item.id === id)
-    let  newList
-    if(itemIndex === 0) {
-        newList = []
-    }else{
-        newList = taskList.splice(itemIndex, 1)
-    }
-    
+    // const itemIndex = taskList.findIndex((item) => item.id === id)
+    // let  newList
+    // if(itemIndex === 0) {
+    //     newList = taskList.slice(1)
+    // }else{
+    //     newList = taskList.slice(itemIndex, 1)
+    // }
+    let newList = taskList.filter((item) => item.id !== id)
 
     setTaskList(newList)
   }
 
   const showMenu = (e) => {
-    // console.log("clicked at", e.target.parentElement.parentElement.lastChild)
+    console.log("clicked at", menuMode)
 
     const parentItem = e.target.parentElement.parentElement
     // parentItem.classList.add("show")
@@ -113,6 +127,7 @@ function Task({
     } else {
       parentItem.classList.add("active")
     }
+    setMenuMode(!menuMode)
   }
 
   return (
@@ -122,7 +137,7 @@ function Task({
         <TaskText checked={statu}>{task}</TaskText>
       </TaskLabel>
       <TaskActions>
-        <span onClick={showMenu}>
+        <MenuButton onClick={showMenu}>
           {!menuMode ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +164,7 @@ function Task({
               />
             </svg>
           )}
-        </span>
+        </MenuButton>
         <ActionMenu className="actionMenu">
           <li onClick={handleEdit} className="edit">
             Edit
