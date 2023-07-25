@@ -4,7 +4,6 @@ import styled from "styled-components"
 const TaskWrapper = styled.div`
   display: flex;
 
-  // background-color: #acfadf;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -15,13 +14,17 @@ const TaskWrapper = styled.div`
 
 const TaskLabel = styled.label`
   display: flex;
+  gap : 1rem;
   width: 80%;
+
+  & *{
+    cursor : pointer;
+  }
 `
 
 const TaskText = styled.p`
   font-size: 18px;
   outline: none;
-  background-color:transparent;
   border: none;
   line-height: 24px;
   ${({ checked }) => checked && `text-decoration: line-through;`}}
@@ -30,6 +33,9 @@ const TaskText = styled.p`
 const MenuButton = styled.span`
   padding: 10px;
   color: #060047;
+  & * {
+    cursor : pointer;
+  }
 `
 
 
@@ -45,13 +51,25 @@ const TaskActions = styled.div`
 const ActionMenu = styled.ul`
   position: absolute;
   list-style: none;
-  right: 100%;
-  top: 50%;
+  right: 70%;
+  top: 40%;
   z-index: 9;
   scale: 0;
 
+  background-color: #d3faf6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0;
+
   & li {
+    padding : 2px;
     cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    border-radius : 0;
   }
 `
 
@@ -141,15 +159,18 @@ function Task({
           {!menuMode ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
             >
-              <g fill="currentColor">
-                <circle cx="10" cy="15" r="2" />
-                <circle cx="10" cy="10" r="2" />
-                <circle cx="10" cy="5" r="2" />
-              </g>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"
+              />
             </svg>
           ) : (
             <svg

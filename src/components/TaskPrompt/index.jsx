@@ -5,13 +5,13 @@ const PromptWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 30px 11px 11px;
 
   min-width: 500px;
   max-width: 90%;
   text-align: center;
 
-  background-color: rgb(165, 236, 230);
+  background-color: #3c87ff;
   border-radius: 5px;
 `
 const PromptForm = styled.form`
@@ -87,7 +87,7 @@ function TaskPrompt({
     <PromptWrapper>
       {inputID >= 0 || editing ? (
         <>
-          <h1>To Do Prompt </h1>
+          {/* <h1>To Do Prompt </h1> */}
           <PromptForm onSubmit={handleForm}>
             <input
               id="input-bar"

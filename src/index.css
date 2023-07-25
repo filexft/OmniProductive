@@ -13,7 +13,9 @@ code {
 }
 
 a{
-  margin-top: ;
+  
+  background-color: #d3faf6;
+  min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding:0;

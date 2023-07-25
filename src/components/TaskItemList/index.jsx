@@ -7,14 +7,13 @@ const TaskListContainer = styled.div`
   max-width: 90%;
   padding: 10px 20px;
 
-  background-color: #acfadf;
   border-radius : 5px
 `
 const TaskContent = styled.div`
 `
-const TaskTitle = styled.h1`
-  text-align: center;
-`
+// const TaskTitle = styled.h1`
+//   text-align: center;
+// `
 function TaskList({
   taskList,
   setTaskList,
@@ -26,7 +25,7 @@ function TaskList({
 setEditingID}) {
   return (
     <TaskListContainer>
-      <TaskTitle>Tak list </TaskTitle>
+      {/* <TaskTitle>Tak list </TaskTitle> */}
       <TaskContent>
         {taskList &&
           taskList.map(({ id, task, statu }, index) => {

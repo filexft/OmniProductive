@@ -3,7 +3,6 @@ import { styled } from "styled-components"
 import ProdTable from "../../components/ProdTable"
 import TaskPrompt from "../../components/TaskPrompt"
 import TaskList from "../../components/TaskItemList"
-import { GlobalStyle } from "../../utils/GlobalStyle"
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -11,7 +10,12 @@ const HomeWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-bottom: 50px;
+  padding: 25px;
+  background-color : white;
+  width : 80%;
+  max-width : 600px;
+  margin : auto;
+
 `
 
 function Home() {
@@ -35,7 +39,7 @@ function Home() {
   
   return (
     <HomeWrapper>
-      <GlobalStyle />
+      
       <ProdTable
         inputID={inputID}
         setInputID={setInputID}

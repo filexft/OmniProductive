@@ -1,14 +1,11 @@
 import styled from "styled-components"
 
-
-
 const ProdTableWrapper = styled.div`
-  margin: 10px;
-  margin-bottom: 50px;
+  margin: 0px;
+  margin-bottom: 0;
   text-align: center;
   background-color: white;
-  padding : 10px;
-  
+  padding: 0;
 `
 
 const GridTable = styled.div`
@@ -24,6 +21,7 @@ const GridTableCells = styled.div`
   max-width: 600px;
   text-align: center;
   padding: 10px;
+  margin-top: 40px;
   background: rgb(255, 0, 28);
   background: linear-gradient(
     132deg,
@@ -34,24 +32,27 @@ const GridTableCells = styled.div`
     rgba(236, 234, 241, 1) 70%
   );
   background-position: top left;
+  & *{
+    cursor : pointer;
+  }
 `
 
-const LeftSide = styled.h3`
+const LeftSide = styled.h4`
   position: absolute;
   top: 30%;
-  left: -60px;
+  left: -70px;
   transform: rotateZ(-90deg);
 `
-const TopSide = styled.h3`
+const TopSide = styled.h4`
   position: absolute;
-  bottom: -35%;
+  top: -35%;
   left: 40%;
 `
 
 const Cell = styled.span`
   background-color: #fff;
   border-radius: 5px;
-  border : 1px solid #ccc;
+  border: 1px solid #ccc;
   &:hover {
     background-color: #e8ffce;
   }
@@ -73,11 +74,12 @@ function ProdTable({
 
   const handleSelection = (index) => {
     let exist = false
-    taskList && taskList.forEach((element) => {
-      if (element.id === index) {
-        exist = true
-      }
-    })
+    taskList &&
+      taskList.forEach((element) => {
+        if (element.id === index) {
+          exist = true
+        }
+      })
     if (exist) {
       setEditing(true)
       setEditingID(index)
@@ -88,7 +90,7 @@ function ProdTable({
 
   return (
     <ProdTableWrapper>
-      <h1>To Do APP</h1>
+      <h1>Priority Table</h1>
       <GridTable>
         <GridTableCells>
           {numArr.map((item, index) => {
@@ -99,8 +101,8 @@ function ProdTable({
             )
           })}
         </GridTableCells>
-        <LeftSide>Urgence</LeftSide>
-        <TopSide>Time</TopSide>
+        <LeftSide>Urgence -&#62;</LeftSide>
+        <TopSide>&#60;- Important</TopSide>
       </GridTable>
     </ProdTableWrapper>
   )
