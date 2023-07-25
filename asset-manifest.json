@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OmniProductive/static/css/main.a4f90338.css",
+    "main.js": "/OmniProductive/static/js/main.b3c61bbd.js",
+    "index.html": "/OmniProductive/index.html",
+    "main.a4f90338.css.map": "/OmniProductive/static/css/main.a4f90338.css.map",
+    "main.b3c61bbd.js.map": "/OmniProductive/static/js/main.b3c61bbd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4f90338.css",
+    "static/js/main.b3c61bbd.js"
+  ]
+}
