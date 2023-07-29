@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/OmniProductive/static/css/main.a4f90338.css",
-    "main.js": "/OmniProductive/static/js/main.b3c61bbd.js",
+    "main.css": "/OmniProductive/static/css/main.38ebc8c9.css",
+    "main.js": "/OmniProductive/static/js/main.ea7d66e4.js",
     "index.html": "/OmniProductive/index.html",
-    "main.a4f90338.css.map": "/OmniProductive/static/css/main.a4f90338.css.map",
-    "main.b3c61bbd.js.map": "/OmniProductive/static/js/main.b3c61bbd.js.map"
+    "main.38ebc8c9.css.map": "/OmniProductive/static/css/main.38ebc8c9.css.map",
+    "main.ea7d66e4.js.map": "/OmniProductive/static/js/main.ea7d66e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4f90338.css",
-    "static/js/main.b3c61bbd.js"
+    "static/css/main.38ebc8c9.css",
+    "static/js/main.ea7d66e4.js"
   ]
 }
