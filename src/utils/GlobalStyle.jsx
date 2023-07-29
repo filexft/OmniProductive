@@ -11,10 +11,18 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  text-align : center;
   min-height: 100vh;
+
   & *{
     border-radius : 5px;
+  }
+  @media (max-width : 600px){
+  
+    padding : 0;
+    background-color: blue;
+    display: block;
+    
   }
 }
 `

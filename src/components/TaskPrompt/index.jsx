@@ -7,12 +7,16 @@ const PromptWrapper = styled.div`
   align-items: center;
   padding: 30px 11px 11px;
 
-  min-width: 500px;
+  width: 400px;
   max-width: 90%;
   text-align: center;
 
   background-color: #3c87ff;
   border-radius: 5px;
+
+  @media (max-width: 600px) {
+    width : 90%;
+  }
 `
 const PromptForm = styled.form`
   display: flex;

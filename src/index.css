@@ -27,6 +27,8 @@ a{
   line-height: 24px;
 
 
+  overflow: auto;
+
 
   position: absolute;
   z-index: 9;

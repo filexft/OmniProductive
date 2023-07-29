@@ -7,15 +7,26 @@ import TaskList from "../../components/TaskItemList"
 const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 25px;
-  background-color : white;
-  width : 80%;
-  max-width : 600px;
-  margin : auto;
 
+  row-gap: 1rem;
+  padding: 25px;
+  background-color: white;
+  width: 80%;
+  max-width: 100%;
+  margin-left: auto;
+
+  @media (max-width: 600px) {
+    padding: 5px;
+    margin: 0;
+
+    width : 100%;
+    
+    & * {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 `
 
 function Home() {
