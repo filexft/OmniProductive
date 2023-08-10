@@ -26,6 +26,10 @@ a{
   font-size: 18px;
   line-height: 24px;
 
+  text-size-adjust: ;
+
+  padding: 3px 7px;
+  background-color:#e23c3c;
 
   overflow: auto;
 

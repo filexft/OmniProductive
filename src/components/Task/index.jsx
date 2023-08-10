@@ -86,6 +86,7 @@ function Task({
   setEditing,
   editingID,
   setEditingID,
+  filter,
 }) {
   const [checked, setChecked] = useState(statu)
   const [menuMode, setMenuMode] = useState(false)
